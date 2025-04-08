@@ -1,3 +1,4 @@
+import { calculateInvestmentResults, formatter } from '../util/investment.js';
 export default function Results({ input }) {
   const results = [];
   calculateInvestmentResults(input, results);
