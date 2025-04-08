@@ -1,13 +1,12 @@
-import { calculateInvestmentResults, formatter } from '../util/investment.js';
-
-
 export default function Results({ input }) {
   const results = [];
   calculateInvestmentResults(input, results);
+  console.log(results); 
   const initialInvestment =
     results[0].valueEndOfYear -
     results[0].interest -
     results[0].annualInvestment;
+  console.log(initialInvestment);
 
   return (
     <table id="result">
@@ -27,6 +26,8 @@ export default function Results({ input }) {
             yearData.annualInvestment * yearData.year -
             initialInvestment;
           const totalAmountInvested = yearData.valueEndOfYear - totalInterest;
+
+          console.log(yearData.year, totalInterest, totalAmountInvested);
 
           return (
             <tr key={yearData.year}>
